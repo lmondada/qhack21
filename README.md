@@ -9,7 +9,7 @@ It might be useful to quickly go through their descriptions to familiarise yours
 Don't worry too much about each individual feature, as we will mostly focus on the covariance matrix for now.
 
 Load dataset into Python:
-```
+```python
 from utils.data_handling import load_data
 
 # this will download the data from the remote server
@@ -18,17 +18,17 @@ data = load_data()
 ```
 
 For playing around, it suffices to consider a small subset of the training dataset, to speed things up.
-```
+```python
 data = data[:100]
 ```
 
 What we care about (for now) are the 3x3 combined covariance matrices that represent the observation uncertainty
 in position. This is what we want to encode in our circuit.
 We get it as
-```
+```python
 from utils.data_handling import load_data, get_combined_cov_pos
 
-data = load_data()
+data = load_data()[:100]
 covs = get_combined_cov_pos(data)
 ```
 
