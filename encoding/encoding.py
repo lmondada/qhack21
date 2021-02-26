@@ -41,7 +41,8 @@ def encode(cov, wires):
     # make sure determinant is one
     vecs = to_so3(vecs)
     # consider log eigenvalues
-    eigs = np.log(eigs)
+    eigs = np.log(eigs)/20
 
     encode_3dvector(eigs, wires[:3])
     encode_unitary(vecs, wires[3:])
+    
